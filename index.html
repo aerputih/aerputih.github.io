@@ -253,8 +253,7 @@
 
         .modal-content {
             background: #ffffff; /* Pop-up background putih bersih */
-            border: 2px solid #2563eb; /* Border pop-up biru */
-            padding: 30px;
+             padding: 30px;
             border-radius: 20px;
             width: 90%;
             max-width: 420px;
@@ -264,7 +263,8 @@
         }
 
         .modal.active .modal-content { transform: scale(1); }
-.modal-avatar {
+
+        .modal-avatar {
             width: 80px; height: 80px;
             border-radius: 50%;
             background: #2563eb;
@@ -295,7 +295,6 @@
         .b-cln { color: #cbd5e1; font-weight: 700; }
         .b-val { color: #000000; font-weight: 600; }
         
-        /* Teks Link Instagram berwarna biru cerah interaktif */
         .b-link { 
             color: #2563eb; 
             text-decoration: none; 
@@ -304,4 +303,151 @@
             padding-bottom: 1px;
         }
         .b-link:hover { 
-            color: #1d4ed8; /* Berubah biru tua saat di-hover */
+            color: #1d4ed8; 
+            border-bottom: 2px solid #1d4ed8;
+            transform: translateX(2px);
+        }
+
+        .close-btn {
+            margin-top: 25px;
+            background: #2563eb;
+            border: none; 
+            color: white;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+        }
+        .close-btn:hover { background: #1d4ed8; }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- ================= SEBELAH KIRI (PROFIL & MENU NAVIGASI) ================= -->
+        <div class="left-panel">
+            <div class="logo-container">
+                <img id="main-logo" class="logo-preview" src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 100 100'><rect width='100%'' height='100%'' fill='%23f1f5f9'/><text x='50%' y='60%' font-size='28' font-family='sans-serif' fill='%232563eb' font-weight='bold' text-anchor='middle'>TEFA</text></svg>">
+                <label for="logo-input" class="upload-label">📸</label>
+                <input type="file" id="logo-input" accept="image/*">
+            </div>
+
+            <h1>TEFA PPLG 5</h1>
+
+            <div class="nav-menu">
+                <button class="nav-item active" onclick="switchTab('profil', this)">💻 Profil</button>
+                <button class="nav-item" onclick="switchTab('visi', this)">🔎 Visi</button>
+                <button class="nav-item" onclick="switchTab('misi', this)">🎯 Misi</button>
+                <button class="nav-item" onclick="switchTab('anggota', this)">👥 Anggota Tim</button>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="nav-item" style="text-decoration: none;">📸 Instagram Kami ↗</a>
+            </div>
+        </div>
+
+        <!-- ================= SEBELAH KANAN (TEKS PENJELASAN DINAMIS) ================= -->
+        <div class="right-panel">
+            
+            <!-- Konten: Profil -->
+            <div id="profil" class="content-section active">
+                <div class="section-title">Profil</div>
+                <div class="text-box company-desc">
+                    <strong>TEFA PPLG 5</strong> merupakan singkatan dari <em>Teaching Factory</em> Pengembangan Perangkat Lunak dan Gim yang bertempat di <strong>SMK N 11 Semarang</strong>. Lembaga ini berfungsi secara integral dalam mengembangkan mutu kompetensi serta membina ekosistem produktif di Jurusan PPLG SMK N 11 Semarang. Kami berkomitmen penuh dan bergerak aktif di bidang penyediaan jasa TI serta pembuatan rancangan desain berbasis web <em>(web design)</em> yang adaptif mengikuti akselerasi dunia industri perangkat lunak modern.
+                </div>
+            </div>
+
+            <!-- Konten: Visi -->
+            <div id="visi" class="content-section">
+                <div class="section-title">Visi</div>
+                <div class="text-box">
+                    "Menjadikan TEFA PPLG kreatif inovatifkompeten dan mampu menghasilkan produk teknologi yang bermanfaat serta sesuai dengan kebutuhan masyarakat dan dunia industri."
+                </div>
+            </div>
+
+            <!-- Konten: Misi -->
+            <div id="misi" class="content-section">
+                <div class="section-title">Misi</div>
+                <div class="text-box">
+                    <ul class="list-style">
+                        <li><strong>1.</strong> Membentuk sikap kerja yg disiplin, beranggungjawab, kreatif, dan profesional.</li>
+                        <li><strong>2.</strong> Meningkatkan kerja sama, komunikasi, dan kemampuan dalam menyelesaikan proyek secara berkelompok.</li>
+                        <li><strong>3.</strong> Menerapkan pembelajaran berbasis proyek dan kebutuhan dunia industri.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Konten: Anggota -->
+            <div id="anggota" class="content-section">
+                <div class="section-title">Anggota Tim (15)</div>
+                <div class="member-grid" id="member-grid-target">
+                    <!-- Data Dihasilkan secara Otomatis Lewat Script JS -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- POP-UP MODAL BIODATA LENGKAP ANGGOTA -->
+    <div class="modal" id="bioModal">
+        <div class="modal-content">
+            <div class="modal-avatar" id="modalAvatar"></div>
+            <div class="modal-title-name" id="modalName">Nama</div>
+            <div class="modal-title-role" id="modalRole">Jabatan</div>
+            
+            <div class="bio-info-grid">
+                <div class="b-lbl">NISN</div><div class="b-cln">:</div><div class="b-val" id="modalNisn">-</div>
+                <div class="b-lbl">Status</div><div class="b-cln">:</div><div class="b-val" id="modalStatus">-</div>
+                <div class="b-lbl">Sekolah</div><div class="b-cln">:</div><div class="b-val" id="modalSekolah">-</div>
+                <div class="b-lbl">Instagram</div><div class="b-cln">:</div><div class="b-val" id="modalIg">-</div>
+            </div>
+            
+            <button class="close-btn" onclick="closeModal()">Tutup Detail</button>
+        </div>
+    </div>
+
+    <!-- ================= LOGIKA INTERAKTIF JAVASCRIPT ================= -->
+    <script>
+        function switchTab(sectionId, element) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            element.classList.add('active');
+        }
+const teamData = [
+            { name: "Arfa Danish", role: "Project Manager", initial: "AD", nisn: "0081234561", ig: "@al_jumr" },
+            { name: "Budi Santoso", role: "UI/UX Designer", initial: "BS", nisn: "0081234562", ig: "@budi_san" },
+            { name: "Siti Aminah", role: "Frontend Dev", initial: "SA", nisn: "0081234563", ig: "@siti.amnh" },
+            { name: "Rian Hidayat", role: "Backend Dev", initial: "RH", nisn: "0081234564", ig: "@rian_hdy" },
+            { name: "Dewi Lestari", role: "Game Developer", initial: "DL", nisn: "0081234565", ig: "@dewi.les" },
+            { name: "Eko Prasetyo", role: "QA Engineer", initial: "EP", nisn: "0081234566", ig: "@eko_pras" },
+            { name: "Feri Irawan", role: "Web Designer", initial: "FI", nisn: "0081234567", ig: "@feri_irw" },
+            { name: "Gita Putri", role: "System Analyst", initial: "GP", nisn: "0081234568", ig: "@gita_ptr" },
+            { name: "Hadi Wijaya", role: "DevOps Specialist", initial: "HW", nisn: "0081234569", ig: "@hadi_wj" },
+            { name: "Indah Permata", role: "Mobile Developer", initial: "IP", nisn: "0081234570", ig: "@indah_pr" },
+            { name: "Joko Susilo", role: "Database Admin", initial: "JS", nisn: "0081234571", ig: "@joko_sus" },
+            { name: "Kurniawan", role: "Fullstack Dev", initial: "KN", nisn: "0081234572", ig: "@kurnia_w" },
+            { name: "Larasati", role: "Scrum Master", initial: "LS", nisn: "0081234573", ig: "@laras_ti" },
+            { name: "Muhammad", role: "Game Asset Artist", initial: "MH", nisn: "0081234574", ig: "@muh_art" },
+            { name: "Novianti", role: "Client Officer", initial: "NV", nisn: "0081234575", ig: "@novi_anti" }
+        ];
+
+        const gridTarget = document.getElementById('member-grid-target');
+        teamData.forEach(member => {
+            const card = document.createElement('div');
+            card.className = 'member-card';
+            card.onclick = () => openModal(member);
+            card.innerHTML = `
+                <div class="avatar-box">${member.initial}</div>
+                <div>
+                    <div class="m-name">${member.name}</div>
+                    <div class="m-role">${member.role}</div>
+                </div>
+            `;
+            gridTarget.appendChild(card);
+        });
+
+        const modal = document.getElementById('bioModal');
+        function openModal(member) {
+            document.getElementById('modalAvatar').innerText = member.initial;
