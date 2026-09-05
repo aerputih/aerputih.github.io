@@ -1,10 +1,223 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Portofolio Saya</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Arfa Danish</title>
+    <!-- Google Fonts untuk tampilan profesional -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        /* Pengaturan Dasar Tema Gelap Ungu Premium */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: #0b0813; /* Hitam keunguan pekat */
+            color: #e2e0e7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Kartu Utama Portofolio */
+        .portfolio-card {
+            background: #130f22; /* Ungu gelap solid */
+            border: 1px solid #231b3a;
+            width: 100%;
+            max-width: 480px;
+            border-radius: 24px;
+            padding: 35px 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            text-align: center;
+        }
+
+        /* Avatar Inisial */
+        .profile-img {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #7c3aed, #4f46e5);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.2rem;
+            color: white;
+            box-shadow: 0 0 25px rgba(124, 58, 237, 0.4);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 6px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: #a78bfa;
+            margin-bottom: 30px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Kotak Konten */
+        .section-box {
+            text-align: left;
+            background: #1a142e;
+            border: 1px solid #281f46;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 0.95rem;
+            color: #c084fc;
+            margin-bottom: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Tata Letak Biodata Lebih Rapi (Grid) */
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 80px 12px 1fr;
+            row-gap: 12px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .bio-label {
+            color: #9ca3af;
+            font-weight: 500;
+        }
+
+        .bio-colon {
+            color: #6b7280;
+        }
+
+        .bio-value {
+            color: #e5e7eb;
+            font-weight: 500;
+            word-break: break-all; /* Agar email panjang tidak terpotong di HP */
+        }
+
+        /* Daftar Tag Keahlian & Hobi */
+        .item-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .item-tag {
+            background: #251c42;
+            color: #ddd6fe;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid #36295e;
+        }
+
+        /* Tombol Instagram */
+        .instagram-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(238, 42, 123, 0.3);
+        }
+
+        .instagram-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(238, 42, 123, 0.5);
+        }
+
+        .instagram-btn:active {
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-    <h1>Halo, Saya Arfa Danish!</h1>
-    <p>Selamat datang di web portofolio saya yang dihosting di GitHub.</p>
+
+    <div class="portfolio-card">
+        <!-- Avatar Inisial -->
+        <div class="profile-img">AD</div>
+        
+        <!-- Nama Anda -->
+        <h1>Arfa Danish</h1>
+        <div class="subtitle">Pelajar & Developer</div>
+
+        <!-- Bagian Biodata (Sangat Rapi & Sejajar) -->
+        <div class="section-box">
+            <div class="section-title">🆔 Biodata</div>
+            <div class="bio-grid">
+                <div class="bio-label">Usia</div>
+                <div class="bio-colon">:</div>
+                <div class="bio-value">16 Tahun</div>
+
+                <div class="bio-label">Status</div>
+                <div class="bio-colon">:</div>
+                <div class="bio-value">Pelajar</div>
+
+                <div class="bio-label">Sekolah</div>
+                <div class="bio-colon">:</div>
+                <div class="bio-value">SMK N 11 Semarang</div>
+
+                <div class="bio-label">Email</div>
+                <div class="bio-colon">:</div>
+                <div class="bio-value">danish02aljumri@gmail.com</div>
+            </div>
+        </div>
+
+        <!-- Bagian Keahlian -->
+        <div class="section-box">
+            <div class="section-title">✨ Keahlian</div>
+            <ul class="item-list">
+                <li class="item-tag">💻 Coding</li>
+                <li class="item-tag">📖 Tahfidz</li>
+            </ul>
+        </div>
+
+        <!-- Bagian Hobi -->
+        <div class="section-box">
+            <div class="section-title">🎯 Hobi</div>
+            <ul class="item-list">
+                <li class="item-tag">📚 Membaca Buku</li>
+                <li class="item-tag">🚴 Bersepeda</li>
+                <li class="item-tag">♟️ Main Catur</li>
+            </ul>
+        </div>
+
+        <!-- Tombol Instagram Terhubung Langsung -->
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="instagram-btn">
+            Hubungi Saya di Instagram
+        </a>
+    </div>
+
 </body>
 </html>
+
