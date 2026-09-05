@@ -1,16 +1,13 @@
-
-
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Profesional | Arfa Danish</title>
-    <!-- Google Fonts -->
+    <!-- Google Fonts dengan ketebalan karakter yang bervariasi -->
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* Pengaturan Dasar Tema Gelap Ungu Modern */
+        /* Pengaturan Dasar Tema Gelap Ungu Premium */
         * {
             margin: 0;
             padding: 0;
@@ -20,187 +17,202 @@
         }
 
         body {
-            background-color: #07050e; /* Hitam keunguan pekat */
+            background-color: #06040c; /* Hitam keunguan premium */
             color: #e2e0e7;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 30px 20px;
         }
 
-        /* Kartu Utama Portofolio */
+        /* Kartu Utama Portofolio (Sedikit diperlebar agar font besar tetap muat) */
         .portfolio-card {
-            background: #110d22; /* Ungu gelap elegan */
-            border: 1px solid #1f183c;
+            background: #110d24; /* Ungu gelap solid */
+            border: 1px solid #221a42;
             width: 100%;
-            max-width: 480px;
-            border-radius: 24px;
-            padding: 35px 25px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+            max-width: 520px;
+            border-radius: 28px;
+            padding: 40px 30px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
             text-align: center;
         }
 
         /* Container Komponen Foto Profil */
         .profile-container {
             position: relative;
-            width: 110px;
-            height: 110px;
-            margin: 0 auto 20px;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
         }
 
         .profile-img-preview {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #7c3aed;
-            box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+            border: 4px solid #7c3aed;
+            box-shadow: 0 0 25px rgba(124, 58, 237, 0.5);
             background: #1a1435;
         }
 
-        /* Tombol Upload File Ganti Foto */
+        /* Tombol Ganti Foto */
         .upload-label {
             position: absolute;
-            bottom: 0;
-            right: 0;
+            bottom: 2px;
+            right: 2px;
             background: #7c3aed;
             color: white;
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 0.9rem;
+            font-size: 1rem;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-            border: 2px solid #110d22;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            border: 2.5px solid #110d22;
         }
 
         .upload-label:hover {
             background: #6d28d9;
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(15deg);
         }
 
         #file-input {
-            display: none; /* Menyembunyikan inputan asli */
+            display: none;
         }
 
+        /* Tipografi Diperbesar */
         h1 {
-            font-size: 1.8rem;
+            font-size: 2.1rem; /* Ukuran nama diperbesar */
             color: #ffffff;
-            margin-bottom: 4px;
-            font-weight: 700;
+            margin-bottom: 6px;
+            font-weight: 800;
             letter-spacing: -0.5px;
         }
 
         .subtitle {
-            font-size: 0.85rem;
+            font-size: 0.95rem; /* Ukuran sub-judul diperbesar */
             color: #a78bfa;
-            margin-bottom: 20px;
-            font-weight: 600;
-            letter-spacing: 1px;
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
-        /* Deskripsi Singkat */
+        /* Deskripsi Singkat yang Profesional & Menjelaskan Detail */
         .bio-desc {
-            font-size: 0.9rem;
-            color: #9cb3af;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            background: rgba(26, 20, 53, 0.4);
-            padding: 12px 16px;
-            border-radius: 12px;
-            border-left: 3px solid #7c3aed;
+            font-size: 1.05rem; /* Font diperbesar agar nyaman dibaca */
+            color: #cbd5e1; /* Warna putih yang lebih cerah dan kontras */
+            line-height: 1.7;
             text-align: left;
+            margin-bottom: 30px;
+            background: #181333;
+            border: 1px solid #281e4e;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .bio-desc strong {
+            color: #c084fc;
+            font-weight: 700;
         }
 
         /* Kotak Konten Utama */
         .section-box {
             text-align: left;
-            background: #17122e;
-            border: 1px solid #241d48;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 20px;
+            background: #16112e;
+            border: 1px solid #261d4b;
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 25px;
         }
 
         .section-title {
-            font-size: 0.9rem;
+            font-size: 1.05rem; /* Judul bagian diperbesar */
             color: #c084fc;
-            margin-bottom: 16px;
-            font-weight: 700;
+            margin-bottom: 18px;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            border-left: 4px solid #7c3aed;
+            padding-left: 10px;
         }
 
-        /* Tata Letak Biodata (Grid) */
+        /* Tata Letak Biodata Grid Terstruktur */
         .bio-grid {
             display: grid;
-            grid-template-columns: 80px 12px 1fr;
-            row-gap: 12px;
-            font-size: 0.9rem;
+            grid-template-columns: 100px 15px 1fr; /* Kolom label diperlebar */
+            row-gap: 16px; /* Jarak baris ditambah agar lebih lega */
+            font-size: 1.05rem; /* Teks isi biodata diperbesar */
             line-height: 1.5;
         }
 
         .bio-label {
-            color: #9ca3af;
-            font-weight: 500;
+            color: #94a3b8;
+            font-weight: 600;
         }
 
         .bio-colon {
-            color: #524775;
+            color: #5b4d8c;
+            font-weight: 700;
         }
 
         .bio-value {
-            color: #e5e7eb;
-            font-weight: 500;
+            color: #f1f5f9;
+            font-weight: 600;
             word-break: break-all;
         }
 
-        /* Link Instagram di dalam Biodata */
+        /* Link Instagram Eksklusif di Biodata */
         .bio-link {
             color: #ff79c6;
             text-decoration: none;
-            font-weight: 600;
-            border-bottom: 1px dashed #ff79c6;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            border-bottom: 2px dashed rgba(255, 121, 198, 0.4);
+            padding-bottom: 2px;
         }
 
         .bio-link:hover {
             color: #ff92df;
-            border-bottom-style: solid;
+            border-bottom: 2px solid #ff92df;
+            transform: translateX(3px);
         }
 
         /* Grid untuk Kotak Keahlian & Hobi (2 Kolom) */
         .item-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            gap: 14px;
         }
 
-        /* Kotak Item Interaktif */
+        /* Kotak Item Interaktif Lebih Tebal */
         .interactive-card {
-            background: #1f183e;
-            border: 1px solid #2e245c;
-            border-radius: 12px;
-            padding: 14px;
+            background: #1f183f;
+            border: 1px solid #312663;
+            border-radius: 14px;
+            padding: 16px;
             text-align: center;
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 1.05rem; /* Ukuran teks di dalam kotak diperbesar */
+            font-weight: 700;
             color: #ddd6fe;
             cursor: pointer;
             user-select: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .interactive-card:hover {
-            background: #2b2259;
+            background: #2b2157;
             border-color: #6366f1;
             color: #ffffff;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
         }
 
         .interactive-card:active {
@@ -211,10 +223,10 @@
 <body>
 
     <div class="portfolio-card">
-        <!-- Komponen Ganti Foto Profil -->
+        <!-- Komponen Unggah Foto Profil -->
         <div class="profile-container">
-            <!-- Gambar default menggunakan placeholder inisial gambar kosong, bisa diganti langsung dari galeri -->
-            <img id="avatar" class="profile-img-preview" src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 100 100'><rect width='100%'' height='100%'' fill='%231a1435'/><text x='50%' y='55%' font-size='32' font-family='sans-serif' fill='%237c3aed' font-weight='bold' text-anchor='middle'>AD</text></svg>" alt="Foto Profil">
+            <!-- Gambar default placeholder inisial AD -->
+            <img id="avatar" class="profile-img-preview" src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='120' height='120' viewBox='0 0 100 100'><rect width='100%'' height='100%'' fill='%231a1435'/><text x='50%' y='58%' font-size='32' font-family='sans-serif' fill='%237c3aed' font-weight='bold' text-anchor='middle'>AD</text></svg>" alt="Foto Profil Arfa Danish">
             <label for="file-input" class="upload-label">📷</label>
             <input type="file" id="file-input" accept="image/*">
         </div>
@@ -223,12 +235,12 @@
         <h1>Arfa Danish</h1>
         <div class="subtitle">Pelajar & Developer</div>
 
-        <!-- Deskripsi Singkat -->
+        <!-- Deskripsi Singkat Profesional yang Disesuaikan -->
         <div class="bio-desc">
-            Halo! Saya **Arfa Danish**, seorang pelajar aktif di SMK N 11 Semarang yang fokus mendalami dunia pemrograman (coding) sekaligus mendedikasikan diri dalam program Tahfidz Al-Qur'an. Keseimbangan teknologi dan spiritual adalah fokus utama saya.
+            Saya adalah seorang tekno-akademis yang berdedikasi tinggi dalam menjembatani dunia digital dan nilai spiritual. Berbekal latar belakang pendidikan formal di bidang teknologi di <strong>SMK N 11 Semarang</strong>, saya aktif mendalami arsitektur pemrograman (coding). Di saat yang bersamaan, saya berkomitmen kuat dalam program <strong>Tahfidz Al-Qur'an</strong> demi membangun kedisiplinan mental dan spiritual yang seimbang.
         </div>
 
-        <!-- Bagian Biodata -->
+        <!-- Bagian Biodata (Termasuk Instagram yang Bisa Dipencet) -->
         <div class="section-box">
             <div class="section-title">🆔 Biodata</div>
             <div class="bio-grid">
@@ -251,14 +263,14 @@
                 <div class="bio-label">Instagram</div>
                 <div class="bio-colon">:</div>
                 <div class="bio-value">
-                    <a href="https://www.instagram.com/al_jumr/" target="_blank" rel="noopener noreferrer" class="bio-link">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="bio-link">
                         @al_jumr ↗
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Bagian Keahlian (2 Kotak) -->
+        <!-- Bagian Keahlian (2 Kotak Utama) -->
         <div class="section-box">
             <div class="section-title">✨ Keahlian</div>
             <div class="item-grid">
@@ -273,26 +285,7 @@
             <div class="item-grid">
                 <div class="interactive-card" onclick="void(0)">📚 Baca Buku</div>
                 <div class="interactive-card" onclick="void(0)">🚴 Bersepeda</div>
-                <div class="interactive-card" onclick="void(0)" style="grid-column: span 2;">♟️ Main Catur</div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Script JavaScript untuk Fitur Ganti Foto dari Galeri -->
-    <script>
-        const fileInput = document.getElementById('file-input');
-        const avatarImage = document.getElementById('avatar');
 
-        fileInput.addEventListener('change', function() {
-            const file = this.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    avatarImage.src = e.target.result;
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
-</body>
-</html>
+
+
