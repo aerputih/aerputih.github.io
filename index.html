@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Arfa Danish</title>
-    <!-- Google Fonts untuk tampilan profesional -->
+    <title>Portofolio Profesional | Arfa Danish</title>
+    <!-- Google Fonts untuk tampilan premium -->
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
         /* Pengaturan Dasar Tema Gelap Ungu Premium */
@@ -13,10 +13,11 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.25s ease;
         }
 
         body {
-            background-color: #0b0813; /* Hitam keunguan pekat */
+            background-color: #08060f; /* Hitam keunguan pekat & elegan */
             color: #e2e0e7;
             display: flex;
             justify-content: center;
@@ -27,17 +28,17 @@
 
         /* Kartu Utama Portofolio */
         .portfolio-card {
-            background: #130f22; /* Ungu gelap solid */
-            border: 1px solid #231b3a;
+            background: #110d1f; /* Ungu gelap solid */
+            border: 1px solid #201838;
             width: 100%;
             max-width: 480px;
             border-radius: 24px;
             padding: 35px 25px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
             text-align: center;
         }
 
-        /* Avatar Inisial */
+        /* Avatar Inisial Premium */
         .profile-img {
             width: 90px;
             height: 90px;
@@ -49,6 +50,7 @@
             align-items: center;
             font-size: 2.2rem;
             color: white;
+            font-weight: 700;
             box-shadow: 0 0 25px rgba(124, 58, 237, 0.4);
         }
 
@@ -61,37 +63,34 @@
         }
 
         .subtitle {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #a78bfa;
             margin-bottom: 30px;
-            font-weight: 500;
-            letter-spacing: 1px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
         }
 
-        /* Kotak Konten */
+        /* Kotak Konten Utama */
         .section-box {
             text-align: left;
-            background: #1a142e;
-            border: 1px solid #281f46;
+            background: #17122b;
+            border: 1px solid #251d45;
             border-radius: 16px;
             padding: 20px;
             margin-bottom: 20px;
         }
 
         .section-title {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #c084fc;
             margin-bottom: 16px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        /* Tata Letak Biodata Lebih Rapi (Grid) */
+        /* Tata Letak Biodata (Grid) */
         .bio-grid {
             display: grid;
             grid-template-columns: 80px 12px 1fr;
@@ -106,34 +105,53 @@
         }
 
         .bio-colon {
-            color: #6b7280;
+            color: #524775;
         }
 
         .bio-value {
             color: #e5e7eb;
             font-weight: 500;
-            word-break: break-all; /* Agar email panjang tidak terpotong di HP */
+            word-break: break-all;
         }
 
-        /* Daftar Tag Keahlian & Hobi */
-        .item-list {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+        /* Grid untuk Keahlian & Hobi (2 Kolom) */
+        .item-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Membagi menjadi 2 kolom sama besar */
+            gap: 12px;
         }
 
-        .item-tag {
-            background: #251c42;
+        /* Kotak Item Interaktif (Bisa Dipencet) */
+        .interactive-card {
+            background: #1f183a;
+            border: 1px solid #2f2558;
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
             color: #ddd6fe;
-            padding: 8px 14px;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid #36295e;
+            cursor: pointer;
+            user-select: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /* Tombol Instagram */
+        /* Efek saat Kursor di atas Kotak (Hover) */
+        .interactive-card:hover {
+            background: #2d2254;
+            border-color: #6366f1; /* Mengubah border menjadi biru keunguan cerah */
+            color: #ffffff;
+            transform: translateY(-3px); /* Efek melayang */
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+        }
+
+        /* Efek saat Kotak Diklik (Active) */
+        .interactive-card:active {
+            transform: translateY(-1px);
+            background: #251c47;
+        }
+
+        /* Tombol Instagram Premium */
         .instagram-btn {
             display: inline-flex;
             align-items: center;
@@ -142,18 +160,17 @@
             background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
             color: white;
             text-decoration: none;
-            padding: 14px;
+            padding: 15px;
             border-radius: 14px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.95rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            margin-top: 10px;
-            box-shadow: 0 4px 15px rgba(238, 42, 123, 0.3);
+            box-shadow: 0 4px 20px rgba(238, 42, 123, 0.3);
         }
 
         .instagram-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(238, 42, 123, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(238, 42, 123, 0.5);
+            letter-spacing: 0.5px;
         }
 
         .instagram-btn:active {
@@ -167,11 +184,11 @@
         <!-- Avatar Inisial -->
         <div class="profile-img">AD</div>
         
-        <!-- Nama Anda -->
+        <!-- Identitas Utama -->
         <h1>Arfa Danish</h1>
         <div class="subtitle">Pelajar & Developer</div>
 
-        <!-- Bagian Biodata (Sangat Rapi & Sejajar) -->
+        <!-- Bagian Biodata -->
         <div class="section-box">
             <div class="section-title">🆔 Biodata</div>
             <div class="bio-grid">
@@ -193,26 +210,27 @@
             </div>
         </div>
 
-        <!-- Bagian Keahlian -->
+        <!-- Bagian Keahlian (2 Kotak Berjajar) -->
         <div class="section-box">
             <div class="section-title">✨ Keahlian</div>
-            <ul class="item-list">
-                <li class="item-tag">💻 Coding</li>
-                <li class="item-tag">📖 Tahfidz</li>
-            </ul>
+            <div class="item-grid">
+                <div class="interactive-card" onclick="void(0)">💻 Coding</div>
+                <div class="interactive-card" onclick="void(0)">📖 Tahfidz</div>
+            </div>
         </div>
 
-        <!-- Bagian Hobi -->
+        <!-- Bagian Hobi (3 Kotak dalam susunan Grid yang rapi) -->
         <div class="section-box">
             <div class="section-title">🎯 Hobi</div>
-            <ul class="item-list">
-                <li class="item-tag">📚 Membaca Buku</li>
-                <li class="item-tag">🚴 Bersepeda</li>
-                <li class="item-tag">♟️ Main Catur</li>
-            </ul>
+            <div class="item-grid">
+                <div class="interactive-card" onclick="void(0)">📚 Baca Buku</div>
+                <div class="interactive-card" onclick="void(0)">🚴 Bersepeda</div>
+                <!-- Kotak ketiga otomatis menyesuaikan tata letak grid -->
+                <div class="interactive-card" onclick="void(0)" style="grid-column: span 2;">♟️ Main Catur</div>
+            </div>
         </div>
 
-        <!-- Tombol Instagram Terhubung Langsung -->
+        <!-- Tombol Sosial Media -->
         <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="instagram-btn">
             Hubungi Saya di Instagram
         </a>
@@ -220,4 +238,7 @@
 
 </body>
 </html>
+
+
+
 
