@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Profesional | Arfa Danish</title>
-    <!-- Google Fonts untuk tampilan premium -->
+    <!-- Google Fonts -->
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* Pengaturan Dasar Tema Gelap Ungu Premium */
+        /* Pengaturan Dasar Tema Gelap Ungu Modern */
         * {
             margin: 0;
             padding: 0;
@@ -17,7 +17,7 @@
         }
 
         body {
-            background-color: #08060f; /* Hitam keunguan pekat & elegan */
+            background-color: #07050e; /* Hitam keunguan pekat */
             color: #e2e0e7;
             display: flex;
             justify-content: center;
@@ -28,8 +28,8 @@
 
         /* Kartu Utama Portofolio */
         .portfolio-card {
-            background: #110d1f; /* Ungu gelap solid */
-            border: 1px solid #201838;
+            background: #110d22; /* Ungu gelap elegan */
+            border: 1px solid #1f183c;
             width: 100%;
             max-width: 480px;
             border-radius: 24px;
@@ -38,26 +38,56 @@
             text-align: center;
         }
 
-        /* Avatar Inisial Premium */
-        .profile-img {
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, #7c3aed, #4f46e5);
-            border-radius: 50%;
+        /* Container Komponen Foto Profil */
+        .profile-container {
+            position: relative;
+            width: 110px;
+            height: 110px;
             margin: 0 auto 20px;
+        }
+
+        .profile-img-preview {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #7c3aed;
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+            background: #1a1435;
+        }
+
+        /* Tombol Upload File Ganti Foto */
+        .upload-label {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: #7c3aed;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2.2rem;
-            color: white;
-            font-weight: 700;
-            box-shadow: 0 0 25px rgba(124, 58, 237, 0.4);
+            font-size: 0.9rem;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            border: 2px solid #110d22;
+        }
+
+        .upload-label:hover {
+            background: #6d28d9;
+            transform: scale(1.1);
+        }
+
+        #file-input {
+            display: none; /* Menyembunyikan inputan asli */
         }
 
         h1 {
             font-size: 1.8rem;
             color: #ffffff;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             font-weight: 700;
             letter-spacing: -0.5px;
         }
@@ -65,17 +95,30 @@
         .subtitle {
             font-size: 0.85rem;
             color: #a78bfa;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-weight: 600;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
+        }
+
+        /* Deskripsi Singkat */
+        .bio-desc {
+            font-size: 0.9rem;
+            color: #9cb3af;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            background: rgba(26, 20, 53, 0.4);
+            padding: 12px 16px;
+            border-radius: 12px;
+            border-left: 3px solid #7c3aed;
+            text-align: left;
         }
 
         /* Kotak Konten Utama */
         .section-box {
             text-align: left;
-            background: #17122b;
-            border: 1px solid #251d45;
+            background: #17122e;
+            border: 1px solid #241d48;
             border-radius: 16px;
             padding: 20px;
             margin-bottom: 20px;
@@ -114,17 +157,30 @@
             word-break: break-all;
         }
 
-        /* Grid untuk Keahlian & Hobi (2 Kolom) */
+        /* Link Instagram di dalam Biodata */
+        .bio-link {
+            color: #ff79c6;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dashed #ff79c6;
+        }
+
+        .bio-link:hover {
+            color: #ff92df;
+            border-bottom-style: solid;
+        }
+
+        /* Grid untuk Kotak Keahlian & Hobi (2 Kolom) */
         .item-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Membagi menjadi 2 kolom sama besar */
+            grid-template-columns: 1fr 1fr;
             gap: 12px;
         }
 
-        /* Kotak Item Interaktif (Bisa Dipencet) */
+        /* Kotak Item Interaktif */
         .interactive-card {
-            background: #1f183a;
-            border: 1px solid #2f2558;
+            background: #1f183e;
+            border: 1px solid #2e245c;
             border-radius: 12px;
             padding: 14px;
             text-align: center;
@@ -136,57 +192,38 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /* Efek saat Kursor di atas Kotak (Hover) */
         .interactive-card:hover {
-            background: #2d2254;
-            border-color: #6366f1; /* Mengubah border menjadi biru keunguan cerah */
+            background: #2b2259;
+            border-color: #6366f1;
             color: #ffffff;
-            transform: translateY(-3px); /* Efek melayang */
-            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
         }
 
-        /* Efek saat Kotak Diklik (Active) */
         .interactive-card:active {
             transform: translateY(-1px);
-            background: #251c47;
-        }
-
-        /* Tombol Instagram Premium */
-        .instagram-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
-            color: white;
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 14px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 20px rgba(238, 42, 123, 0.3);
-        }
-
-        .instagram-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(238, 42, 123, 0.5);
-            letter-spacing: 0.5px;
-        }
-
-        .instagram-btn:active {
-            transform: translateY(0);
         }
     </style>
 </head>
 <body>
 
     <div class="portfolio-card">
-        <!-- Avatar Inisial -->
-        <div class="profile-img">AD</div>
+        <!-- Komponen Ganti Foto Profil -->
+        <div class="profile-container">
+            <!-- Gambar default menggunakan placeholder inisial gambar kosong, bisa diganti langsung dari galeri -->
+            <img id="avatar" class="profile-img-preview" src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='100' height='100' viewBox='0 0 100 100'><rect width='100%'' height='100%'' fill='%231a1435'/><text x='50%' y='55%' font-size='32' font-family='sans-serif' fill='%237c3aed' font-weight='bold' text-anchor='middle'>AD</text></svg>" alt="Foto Profil">
+            <label for="file-input" class="upload-label">📷</label>
+            <input type="file" id="file-input" accept="image/*">
+        </div>
         
         <!-- Identitas Utama -->
         <h1>Arfa Danish</h1>
         <div class="subtitle">Pelajar & Developer</div>
+
+        <!-- Deskripsi Singkat -->
+        <div class="bio-desc">
+            Halo! Saya **Arfa Danish**, seorang pelajar aktif di SMK N 11 Semarang yang fokus mendalami dunia pemrograman (coding) sekaligus mendedikasikan diri dalam program Tahfidz Al-Qur'an. Keseimbangan teknologi dan spiritual adalah fokus utama saya.
+        </div>
 
         <!-- Bagian Biodata -->
         <div class="section-box">
@@ -207,10 +244,18 @@
                 <div class="bio-label">Email</div>
                 <div class="bio-colon">:</div>
                 <div class="bio-value">danish02aljumri@gmail.com</div>
+
+                <div class="bio-label">Instagram</div>
+                <div class="bio-colon">:</div>
+                <div class="bio-value">
+                    <a href="https://www.instagram.com/al_jumr/" target="_blank" rel="noopener noreferrer" class="bio-link">
+                        @al_jumr ↗
+                    </a>
+                </div>
             </div>
         </div>
 
-        <!-- Bagian Keahlian (2 Kotak Berjajar) -->
+        <!-- Bagian Keahlian (2 Kotak) -->
         <div class="section-box">
             <div class="section-title">✨ Keahlian</div>
             <div class="item-grid">
@@ -219,25 +264,36 @@
             </div>
         </div>
 
-        <!-- Bagian Hobi (3 Kotak dalam susunan Grid yang rapi) -->
+        <!-- Bagian Hobi (3 Kotak Susunan Grid) -->
         <div class="section-box">
             <div class="section-title">🎯 Hobi</div>
             <div class="item-grid">
                 <div class="interactive-card" onclick="void(0)">📚 Baca Buku</div>
                 <div class="interactive-card" onclick="void(0)">🚴 Bersepeda</div>
-                <!-- Kotak ketiga otomatis menyesuaikan tata letak grid -->
                 <div class="interactive-card" onclick="void(0)" style="grid-column: span 2;">♟️ Main Catur</div>
             </div>
         </div>
-
-        <!-- Tombol Sosial Media -->
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="instagram-btn">
-            Hubungi Saya di Instagram
-        </a>
     </div>
 
+    <!-- Script JavaScript untuk Fitur Ganti Foto dari Galeri -->
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const avatarImage = document.getElementById('avatar');
+
+        fileInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    avatarImage.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 </html>
+
 
 
 
